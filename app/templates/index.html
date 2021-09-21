@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Hop[p]ers</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+<div class="col-8 m-auto pt-2 pb-2 text-center">
+    <h1>CRUD</h1>
+</div>
+
+<div class="col-8 m-auto pt-3 pb-2 text-center">
+    <a href="/form" class="btn btn-success">Cadastre sua empresa</a>
+</div>
+
+<div class="col-8 m-auto pt-4 pb-2 text-center">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nome</th>
+      <th scope="col">CNPJ</th>
+      <th scope="col">Telefone</th>
+      <th scope="col">Endereço</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  {% for dbs in db %}
+    <tr>
+      <th>{{dbs.id}}</th>
+      <td>{{dbs.nome}}</td>
+      <td>{{dbs.cnpj}}</td>
+      <td>{{dbs.telefone}}</td>
+      <td>{{dbs.endereco}}</td>
+
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+
+</body>
+</html>
