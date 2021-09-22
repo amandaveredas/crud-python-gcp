@@ -15,15 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app.views import home, form, create, produto, formproduto, createproduto
-
+from app.views import home, formEmpresa, empresas, criaProduto, formProduto, produtos, criaEmpresa
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
-    path('form/', form, name='form'),
-    path('create/', create, name='create'),
-    path('produto/', produto, name='produto'),
-    path('formproduto/', formproduto, name='formproduto'),
-    path('createproduto/', createproduto, name='createproduto')
+    path('formempresa/', formEmpresa, name='formEmpresa'),
+    path('criaempresa/', criaEmpresa, name='criaEmpresa'),
+    path('produtos/', produtos, name='produtos'),
+    path('formproduto/', formProduto, name='formProduto'),
+    path('criaproduto/', criaProduto, name='criaProduto'),
+    path('empresas/', empresas, name='empresas')
 ]
