@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app.views import home, form, create
+from app.views import home, form, create, produto, formproduto, createproduto
 
 
 urlpatterns = [
@@ -23,4 +23,7 @@ urlpatterns = [
     path('', home, name='home'),
     path('form/', form, name='form'),
     path('create/', create, name='create'),
+    path('produto/', produto, name='produto'),
+    path('formproduto/', formproduto, name='formproduto'),
+    path('createproduto/', createproduto, name='createproduto')
 ]
