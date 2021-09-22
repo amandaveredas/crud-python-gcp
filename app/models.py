@@ -14,4 +14,4 @@ class Produto(models.Model):
     preco = models.FloatField()
     quantidade = models.IntegerField()
     fabricante = models.CharField(max_length=255)
-    id_empresa = models.ForeignKey(Empresa, on_delete = models.CASCADE)
+    empresa = models.ForeignKey("Empresa", on_delete = models.CASCADE)

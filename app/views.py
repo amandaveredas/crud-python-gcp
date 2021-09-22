@@ -9,29 +9,40 @@ def home(request):
     data['db'] = Empresa.objects.all()
     return render(request, 'index.html', data)
 
-def form(request):
+
+def formEmpresa(request):
     data = {}
     data['form'] = EmpresaForm()
     return render(request, 'formempresa.html', data)
 
-def create (request):
+
+def criaEmpresa(request):
     form = EmpresaForm(request.POST or None)
     if form.is_valid():
         form.save()
-        return redirect('home')
+        return redirect('empresas')
 
-def produto(request):
+
+def produtos(request):
     data = {}
     data['banco'] = Produto.objects.all()
-    return render(request, 'produto.html', data)
+    return render(request, 'produtos.html', data)
 
-def formproduto(request):
+
+def formProduto(request):
     data = {}
     data['formproduto'] = ProdutoForm()
     return render(request, 'formproduto.html', data)
 
-def createproduto (request):
+
+def criaProduto(request):
     formproduto = ProdutoForm(request.POST or None)
     if formproduto.is_valid():
         formproduto.save()
-        return redirect('produto')
+        return redirect('produtos')
+
+
+def empresas(request):
+    data = {}
+    data['db'] = Empresa.objects.all()
+    return render(request, 'empresas.html', data)
