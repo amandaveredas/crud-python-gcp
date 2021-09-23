@@ -21,9 +21,9 @@
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Nome</th>
+      <th scope="col">Estoque</th>
       <th scope="col">Preço</th>
-      <th scope="col">Quantidade</th>
-      <th scope="col">Fabricante</th>
+      <th scope="col">Status</th>
         <th scope="col">Empresa</th>
 
     </tr>
@@ -33,10 +33,9 @@
     <tr>
       <th>{{dado.id}}</th>
       <td>{{dado.nome}}</td>
+      <td>{{dado.estoque}}</td>
       <td>{{dado.preco}}</td>
-      <td>{{dado.quantidade}}</td>
-      <td>{{dado.fabricante}}</td>
-        <td>{{dado.empresa}}</td>
+      <td>{{dado.empresa}}</td>
         <td>
         <a href="/detalheproduto/{{dado.id}}" class="btn btn-dark">Visualizar</a>
         <a href="" class="btn btn-danger">Deletar</a>
