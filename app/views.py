@@ -35,6 +35,12 @@ def formProduto(request):
     return render(request, 'formproduto.html', data)
 
 
+def produtosEmpresa(request, idempresa):
+    p_lista = Produto.objects.all().filter(empresa=idempresa)
+    context = {'produto_lista': p_lista, 'idEmpresa': idempresa}
+    return render(request, 'produtosempresa.html', context)
+
+
 def criaProduto(request):
     formproduto = ProdutoForm(request.POST or None)
     if formproduto.is_valid():
@@ -46,3 +52,9 @@ def empresas(request):
     data = {}
     data['db'] = Empresa.objects.all()
     return render(request, 'empresas.html', data)
+
+
+def pesquisaprodutos(request):
+    e_lista = Empresa.objects.all()
+    context = {'empresa_lista': e_lista}
+    return render(request, 'pesquisaprodutos.html', context)

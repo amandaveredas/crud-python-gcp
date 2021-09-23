@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 
 class Empresa(models.Model):
@@ -14,4 +15,4 @@ class Produto(models.Model):
     preco = models.FloatField()
     quantidade = models.IntegerField()
     fabricante = models.CharField(max_length=255)
-    empresa = models.ForeignKey("Empresa", on_delete = models.CASCADE)
+    empresa = models.ForeignKey("Empresa", on_delete=models.CASCADE)

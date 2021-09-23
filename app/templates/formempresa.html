@@ -15,7 +15,7 @@
 </div>
 
 <div class="col-8 m-auto pt-4 pb-2 text-center">
-    <form name="form" id="form" action="/empresas/"method="post">
+    <form name="form" id="form" action="/criaempresa/"method="post">
         {%csrf_token %}
     <div class="form-group mt-4">Nome: {{form.nome}}</div>
     <div class="form-group mt-4">CNPJ: {{form.cnpj}}</div>
