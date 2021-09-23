@@ -11,7 +11,7 @@ class Empresa(models.Model):
 
 class Produto(models.Model):
     nome = models.CharField(max_length=100)
+    estoque = models.IntegerField()
     preco = models.FloatField()
-    quantidade = models.IntegerField()
-    fabricante = models.CharField(max_length=255)
+    status = models.CharField(max_length=255)
     empresa = models.ForeignKey("Empresa", on_delete = models.CASCADE)

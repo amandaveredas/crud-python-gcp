@@ -27,9 +27,9 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('nome', models.CharField(max_length=100)),
+                ('estoque', models.IntegerField()),
                 ('preco', models.FloatField()),
-                ('quantidade', models.IntegerField()),
-                ('fabricante', models.CharField(max_length=255)),
+                ('status', models.CharField(max_length=255)),
                 ('id_empresa', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='app.empresa')),
             ],
         ),

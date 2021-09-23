@@ -15,12 +15,12 @@
 </div>
 
 <div class="col-8 m-auto pt-4 pb-2 text-center">
-    <form name="formproduto" id="formproduto" action="/criaproduto/"method="post">
+    <form name="formproduto" id="formproduto" action="/criaproduto/" method="post">
         {%csrf_token %}
     <div class="form-group mt-4">Nome: {{formproduto.nome}}</div>
+    <div class="form-group mt-4">Estoque: {{formproduto.estoque}}</div>
     <div class="form-group mt-4">Preço: {{formproduto.preco}}</div>
-    <div class="form-group mt-4">Quantidade: {{formproduto.quantidade}}</div>
-    <div class="form-group mt-4">Fabricante: {{formproduto.fabricante}}</div>
+    <div class="form-group mt-4">Status: {{formproduto.status}}</div>
 
         <input type="submit" class="btn btn-warning mt-4" value="Cadastrar">
     </form>
