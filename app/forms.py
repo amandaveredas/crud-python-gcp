@@ -8,8 +8,8 @@ class EmpresaForm(ModelForm):
         model = Empresa
         fields = ['nome', 'cnpj', 'telefone', 'endereco']
 
+
 class ProdutoForm(ModelForm):
     class Meta:
         model = Produto
-        fields = ['nome', 'preco', 'quantidade', 'fabricante']
-
+        fields = ['nome', 'preco', 'quantidade', 'fabricante', 'empresa']
