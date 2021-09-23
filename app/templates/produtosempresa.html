@@ -8,19 +8,7 @@
 <body>
 <div class="col-8 m-auto pt-2 pb-2 text-center " >
     <h1>Lista de Produtos por empresa</h1>
-    <h2>Selecione o nome da empresa: </h2>
-</div>
-
-<div class="col-8 m-auto pt-2 pb-2 text-center">
-    <form method="get">
-         <select name="id" id="idEmpresa">
-        {% for empresa in empresa_lista %}
-        <option id="nomeEscolhido" value="{{empresa.id}}">{{empresa.nome}}</option>
-        {% endfor %}
-         <input type="submit" class="btn btn-success mt-4" value="Buscar">
-    </select>
-    </form>
-
+    <h2>Empresa: {{nome_empresa}}</h2>
 </div>
 
 <div class="col-8 m-auto pt-4 pb-2 text-center">
@@ -44,6 +32,11 @@
       <td id="preco">{{produto.preco}}</td>
       <td id="quantidade">{{produto.quantidade}}</td>
       <td id="fabricante">{{produto.fabricante}}</td>
+        <td>
+        <a href="/detalheproduto/{{produto.id}}" class="btn btn-dark">Visualizar</a>
+        <a href="" class="btn btn-danger">Deletar</a>
+        </td>
+
     </tr>
 
   {% endfor %}

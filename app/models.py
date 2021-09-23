@@ -9,10 +9,13 @@ class Empresa(models.Model):
     telefone = models.CharField(max_length=30)
     endereco = models.CharField(max_length=255)
 
+    def __str__(self):
+        return self.nome
+
 
 class Produto(models.Model):
     nome = models.CharField(max_length=100)
     preco = models.FloatField()
     quantidade = models.IntegerField()
     fabricante = models.CharField(max_length=255)
-    empresa = models.ForeignKey("Empresa", on_delete=models.CASCADE)
+    empresa = models.ForeignKey(Empresa, on_delete=models.CASCADE)

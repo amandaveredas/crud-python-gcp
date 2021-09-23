@@ -24,6 +24,7 @@
       <th scope="col">Preço</th>
       <th scope="col">Quantidade</th>
       <th scope="col">Fabricante</th>
+        <th scope="col">Empresa</th>
 
     </tr>
   </thead>
@@ -35,6 +36,12 @@
       <td>{{dado.preco}}</td>
       <td>{{dado.quantidade}}</td>
       <td>{{dado.fabricante}}</td>
+        <td>{{dado.empresa}}</td>
+        <td>
+        <a href="/detalheproduto/{{dado.id}}" class="btn btn-dark">Visualizar</a>
+        <a href="" class="btn btn-danger">Deletar</a>
+        </td>
+
     </tr>
   {% endfor %}
   </tbody>

@@ -11,17 +11,24 @@
 </div>
 
 <div class="col-8 m-auto pt-2 pb-2 text-center">
-    <form action="/produtosempresa/"method="get">
-         <select name="idempresa" id="idempresa">
+    <select name="idempresa" id="idempresa">
         {% for empresa in empresa_lista %}
-        <option id="nomeEscolhido" value="{{empresa.id}}">{{empresa.nome}}</option>
+        <option value="/produtosempresa/{{empresa.id}}">{{empresa.nome}}</option>
         {% endfor %}
-         <input type="submit" class="btn btn-success mt-4" value="Buscar">
     </select>
-    </form>
-
 </div>
 
+<div class="col-8 m-auto pt-3 pb-2 text-center">
+    <a href="/" class="btn btn-info">Voltar</a>
+</div>
+<script>
 
+    let select = document.getElementById("idempresa")
+    select.addEventListener('change', function() {
+        location.href = this.value
+    })
+
+
+</script>
 </body>
 </html>
