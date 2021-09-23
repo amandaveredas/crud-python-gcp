@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 
 class Empresa(models.Model):
@@ -8,10 +9,13 @@ class Empresa(models.Model):
     telefone = models.CharField(max_length=30)
     endereco = models.CharField(max_length=255)
 
+    def __str__(self):
+        return self.nome
+
 
 class Produto(models.Model):
     nome = models.CharField(max_length=100)
     estoque = models.IntegerField()
     preco = models.FloatField()
     status = models.CharField(max_length=255)
-    empresa = models.ForeignKey("Empresa", on_delete = models.CASCADE)
+    empresa = models.ForeignKey(Empresa, on_delete=models.CASCADE)

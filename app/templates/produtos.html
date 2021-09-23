@@ -24,6 +24,7 @@
       <th scope="col">Estoque</th>
       <th scope="col">Preço</th>
       <th scope="col">Status</th>
+        <th scope="col">Empresa</th>
 
     </tr>
   </thead>
@@ -34,7 +35,12 @@
       <td>{{dado.nome}}</td>
       <td>{{dado.estoque}}</td>
       <td>{{dado.preco}}</td>
-      <td>{{dado.status}}</td>
+      <td>{{dado.empresa}}</td>
+        <td>
+        <a href="/detalheproduto/{{dado.id}}" class="btn btn-dark">Visualizar</a>
+        <a href="" class="btn btn-danger">Deletar</a>
+        </td>
+
     </tr>
   {% endfor %}
   </tbody>
