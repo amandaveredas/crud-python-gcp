@@ -18,7 +18,7 @@ from django.urls import path
 
 from app import views
 from app.views import home, formEmpresa, empresas, criaProduto, formProduto, produtos, criaEmpresa, produtosEmpresa, \
-    pesquisaprodutos, detalheempresa, detalheproduto
+    pesquisaprodutos, detalheempresa, detalheproduto, excluirempresa, excluirproduto
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -32,5 +32,7 @@ urlpatterns = [
     path('produtosempresa/<int:empresa_id>', produtosEmpresa, name='produtosEmpresa'),
     path('detalheempresa/<int:pk>/', detalheempresa, name='detalheempresa'),
     path('detalheproduto/<int:pk>/', detalheproduto, name='detalheproduto'),
-    path('pesquisaprodutos/', pesquisaprodutos, name='pesquisaprodutos')
+    path('pesquisaprodutos/', pesquisaprodutos, name='pesquisaprodutos'),
+    path('excluirempresa/<int:pk>', excluirempresa, name='excluirempresa'),
+    path('excluirproduto/<int:pk>', excluirproduto, name='excluirproduto')
 ]
