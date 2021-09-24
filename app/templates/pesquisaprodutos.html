@@ -19,13 +19,14 @@
 </div>
 
 <div class="col-8 m-auto pt-3 pb-2 text-center">
-    <a href="/" class="btn btn-info">Voltar</a>
+    <a href="/" class="btn btn-info">Menu inicial</a>
+    <input type="button" class="btn btn-info" id="buscar" value="Buscar">
 </div>
 <script>
 
-    let select = document.getElementById("idempresa")
-    select.addEventListener('change', function() {
-        location.href = this.value
+    let botao = document.getElementById("buscar")
+    buscar.addEventListener('click', function() {
+        location.href = document.getElementById("idempresa").value
     })
 
 
