@@ -72,3 +72,12 @@ def detalheproduto(request, pk):
     data['db'] = Produto.objects.get(pk=pk)
     return render(request, 'detalheproduto.html', data)
 
+
+def excluirempresa(request, pk):
+    Empresa.objects.get(pk=pk).delete()
+    return redirect('empresas')
+
+
+def excluirproduto(request,pk):
+    Produto.objects.get(pk=pk).delete()
+    return redirect('produtos')
