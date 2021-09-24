@@ -17,9 +17,10 @@
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Nome</th>
+      <th scope="col">Estoque</th>
       <th scope="col">Preço</th>
-      <th scope="col">Quantidade</th>
-      <th scope="col">Fabricante</th>
+      <th scope="col">Status</th>
+
 
     </tr>
   </thead>
@@ -27,11 +28,12 @@
   {% for produto in produto_lista %}
 
     <tr>
-      <th id="id">{{produto.id}}</th>
-      <td id="nome">{{produto.nome}}</td>
-      <td id="preco">{{produto.preco}}</td>
-      <td id="quantidade">{{produto.quantidade}}</td>
-      <td id="fabricante">{{produto.fabricante}}</td>
+      <th>{{produto.id}}</th>
+      <td>{{produto.nome}}</td>
+      <td>{{produto.estoque}}</td>
+      <td>{{produto.preco}}</td>
+      <td>{{produto.status}}</td>
+
         <td>
         <a href="/detalheproduto/{{produto.id}}" class="btn btn-dark">Visualizar</a>
         <a href="" class="btn btn-danger">Deletar</a>
