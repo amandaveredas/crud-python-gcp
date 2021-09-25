@@ -8,18 +8,27 @@ pipeline {
             }
 
         }
-
+        
         stage('Build') {
             steps {
                 git branch: 'main', credentialsId: '0c1ae178-c4ae-429e-83ab-85ceae8d3f89', url: 'https://github.com/amandaveredas/crud-python-gcp.git'
             }
         }
 
+        stage('Test') {
+            steps {
+                //sh "arquivo de teste"
+                echo 'The job has been tested'
+            }
+        }
+
         stage('Production') {
             steps {
                 //sh "arquivo de teste"
-                echo 'The job has been put in production '
+                echo 'The job has been put in production'
             }
         }
+
+
     }
 }
