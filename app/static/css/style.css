@@ -1,0 +1,27 @@
+#titulo{
+  margin-top: 20px;
+  position: absolute;
+  top: 15%;
+  width: 100%;
+  text-align: center;
+}
+
+#fotohome{
+  padding: 0px;
+  width: 800px;
+  height: 800px;
+}
+
+.form-control{
+  border: 1px solid black;
+  outline-style: solid;
+  outline-width: thin;
+}
+
+.btn{
+    border-radius: 10px;
+}
+
+footer{
+color: #ffffff;
+}
