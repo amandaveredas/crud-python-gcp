@@ -81,3 +81,17 @@ def excluirempresa(request, pk):
 def excluirproduto(request,pk):
     Produto.objects.get(pk=pk).delete()
     return redirect('produtos')
+
+def editarproduto (request, pk):
+    data = {}
+    data['db'] = Produto.objects.get(pk=pk)
+    data['formproduto'] = ProdutoForm(instance=data['db'])
+    return render(request, 'formproduto.html', data)
+
+def atualizarproduto(request, pk):
+    data = {}
+    data['db'] = Produto.objects.get(pk=pk)
+    formproduto = ProdutoForm(request.POST or None, instance=data['db'])
+    if formproduto.is_valid():
+        formproduto.save()
+    return redirect('produtos')

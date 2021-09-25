@@ -1,55 +1,75 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <title>Lista Produtos por empresa</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-<div class="col-8 m-auto pt-2 pb-2 text-center " >
+<!--navbar-->
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary justify-content-center align-items-start">
+    <span class="navbar-brand position-absolute mx-0">Hop[p]ers</span>
+    <div class="navbar-collapse collapse" id="navbar">
+        <ul class="navbar-nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link active" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="/empresas">Empresas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="/produtos">Produtos</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!--navbar-->
+<div class="col-8 m-auto pt-2 pb-2 text-center ">
     <h1>Lista de Produtos por empresa</h1>
     <h2>Empresa: {{nome_empresa}}</h2>
 </div>
 
 <div class="col-8 m-auto pt-4 pb-2 text-center">
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Nome</th>
-      <th scope="col">Estoque</th>
-      <th scope="col">Preço</th>
-      <th scope="col">Status</th>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Estoque</th>
+            <th scope="col">Preço</th>
+            <th scope="col">Status</th>
 
 
-    </tr>
-  </thead>
-  <tbody>
-  {% for produto in produto_lista %}
+        </tr>
+        </thead>
+        <tbody>
+        {% for produto in produto_lista %}
 
-    <tr>
-      <th>{{produto.id}}</th>
-      <td>{{produto.nome}}</td>
-      <td>{{produto.estoque}}</td>
-      <td>{{produto.preco}}</td>
-      <td>{{produto.status}}</td>
+        <tr>
+            <th>{{produto.id}}</th>
+            <td>{{produto.nome}}</td>
+            <td>{{produto.estoque}}</td>
+            <td>{{produto.preco}}</td>
+            <td>{{produto.status}}</td>
 
-       <td>
-        <a href="/detalheproduto/{{produto.id}}" class="btn btn-dark">Visualizar</a>
-        <a href="/excluirproduto/{{produto.id}}" class="btn btn-danger">Excluir</a>
-        </td>
+            <td>
+                <a href="/detalheproduto/{{produto.id}}" class="btn btn-dark">Visualizar</a>
+                <a href="/excluirproduto/{{produto.id}}" class="btn btn-danger">Excluir</a>
+            </td>
 
-    </tr>
+        </tr>
 
-  {% endfor %}
-  </tbody>
-</table>
+        {% endfor %}
+        </tbody>
+    </table>
 </div>
 <div class="col-8 m-auto pt-3 pb-2 text-center">
     <a href="/formproduto" class="btn btn-success">Cadastre seu produto</a>
-    <a href="/" class="btn btn-info">Menu inicial</a>
-    <a href="/produtos" class="btn btn-info">Todos os produtos</a>
-    <input type="button" value="Voltar" onclick="history.go(-1)">
+    <!--a href="/produtos" class="btn btn-info">Todos os produtos</a>
+    <input type="button" value="Voltar" onclick="history.go(-1)"-->
 </div>
 </body>
 </html>

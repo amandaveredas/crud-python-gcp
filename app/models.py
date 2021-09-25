@@ -18,4 +18,5 @@ class Produto(models.Model):
     estoque = models.IntegerField()
     preco = models.FloatField()
     status = models.CharField(max_length=255)
+    imagem = models.CharField(max_length=255)
     empresa = models.ForeignKey(Empresa, on_delete=models.CASCADE)
