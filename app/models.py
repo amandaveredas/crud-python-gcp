@@ -1,12 +1,14 @@
 from django.db import models
+from django_cpf_cnpj.fields import CNPJField
+from phonenumber_field.modelfields import PhoneNumberField
 
 
 # Create your models here.
 
 class Empresa(models.Model):
     nome = models.CharField(max_length=100)
-    cnpj = models.CharField(max_length=30)
-    telefone = models.CharField(max_length=30)
+    cnpj= CNPJField(masked=False)
+    telefone = models.CharField(max_length=11)
     endereco = models.CharField(max_length=255)
 
     def __str__(self):
