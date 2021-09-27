@@ -94,5 +94,6 @@ python manage.py migrate
 # Docker:
 para rodar o container:
 ```
+docker pull amandaveredas/crud-empresas
 docker run --name crud-empresas -d -p 8000:8000 crud-empresas:latest
 ```
