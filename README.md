@@ -1,4 +1,8 @@
 # SISTEMA DE CADASTRO HOP[P]ERS
+<div align="center">
+<img src = "https://i.imgur.com/OuuUJnl.jpg" width=500px'>
+</div>
+
 
 O Sistema de cadastro Hop[p]ers é uma aplicação web construída com o objetivo de facilitar o gerenciamento de estoque de empresas do varejo através dos serviços de:
 
