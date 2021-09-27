@@ -44,7 +44,7 @@ def criaProduto(request):
 
 def empresas(request):
     data = {}
-    data['db'] = Empresa.objects.all()
+    data['db'] = Empresa.objects.order_by('nome').all()
     return render(request, 'empresas.html', data)
 
 
