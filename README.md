@@ -46,9 +46,6 @@ git clone https://github.com/amandaveredas/crud-python-gcp.git
 #Na pasta do projeto, ative a máquina virtual:
 venv\Scripts\activate
 
-#Instale o pacote mysqlclient:
-pip install mysqlclient  
-
 #Instale a biblioteca de cnpj:
 pip install django-cpf-cnpj
 
@@ -58,6 +55,41 @@ python manage.py runserver
 #Vá para o browser e digite:
 http://locashost:8000
 ```
+# Rodando o banco de dados:
+
+Utilização do WampServer como servidor do MySQL (Windows):
+WampServer
+
+Para sistemas Linux, usar o LAMP
+
+Baixar a versão correspondendo a versão do sistema operacional (32bit ou 64bit);
+Acessar localhost/phpmyadmin para ver a interface do banco MySQL
+
+User: root
+
+Password: apenas pressionar enter
+
+obs: nome da tabela: sistemahp
+
+Se necessário atualizar a versão do MySQL:
+Python Extension Packages for Windows - Christoph Gohlke
+
+Buscar a versão do Python (cp37 para python 3.7, cp38 para 3.8, cp39 para 3.9) compatível com a versão do Windows;
+
+Baixar e colocar na pasta do aplicativo;
+
+No prompt, iniciar o python e usar o comando:
+
+pip install "nome da versão"
+
+ex:
+
+pip install mysqlclient-1.4.6-cp39-cp39-win_amd64.whl
+
+finalizar com:
+
+python manage.py migrate
+
                                                          
 # Docker:
 para rodar o container:
