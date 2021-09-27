@@ -31,14 +31,13 @@
 </div>
 
 <div class="col-8 m-auto pt-3 pb-2 text-center">
-    <a href="/formempresa" class="btn btn-success">Cadastre sua empresa</a>
+    <a href="/formempresa" class="btn btn-info">Cadastre sua empresa</a>
 </div>
 
 <div class="col-8 m-auto pt-4 pb-2 text-center">
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">ID</th>
       <th scope="col">Nome</th>
       <th scope="col">CNPJ</th>
       <th scope="col">Telefone</th>
@@ -49,7 +48,6 @@
   <tbody>
   {% for dbs in db %}
     <tr>
-      <th>{{dbs.id}}</th>
       <td>{{dbs.nome}}</td>
       <td>{{dbs.cnpj}}</td>
       <td>{{dbs.telefone}}</td>
